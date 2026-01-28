@@ -1,66 +1,89 @@
-🎯 Rifle Shot Grouping Analysis using Computer Vision
-Overview
+# 🎯 Rifle Shot Grouping Analysis using Computer Vision
 
-This project presents a computer vision–based Proof-of-Concept (PoC) system designed to automatically analyze rifle shot grouping accuracy from target images. The system detects shot impact points, clusters them spatially, and quantifies grouping precision using geometric analysis.
+Proof-of-Concept (PoC) system that automatically analyzes rifle shot grouping accuracy from target images using computer vision techniques.
 
-The project was developed as part of an industry assignment for Bangladesh Army through a private software company, focusing on precision evaluation and visual measurement.
+The system detects shot impact points, clusters them spatially, and quantifies grouping precision through geometric measurements.
 
-Problem Statement
+Developed as an industry assignment for **Bangladesh Army** through a private software company, with focus on objective precision evaluation and visual measurement.
 
-Manual evaluation of rifle shot grouping during shooting practice is time-consuming and subjective. The goal of this project was to build an automated, image-based solution to objectively evaluate grouping accuracy and spatial dispersion.
+## Problem Statement
 
-Methodology
+Manual evaluation of rifle shot grouping during shooting practice is:
 
-Image preprocessing (grayscale conversion, noise reduction)
+- Time-consuming  
+- Subjective  
+- Prone to human error and inconsistency
 
-Thresholding and contour detection
+**Goal**: Build an automated, image-based solution to objectively evaluate shot grouping accuracy and spatial dispersion.
 
-Extraction of shot impact centroids
+## Features
 
-Spatial clustering and grouping analysis
+- Automatic detection of bullet impact points  
+- Centroid extraction of each shot hole  
+- Spatial clustering of shot groups  
+- Calculation of grouping precision metrics  
+- Visual overlays showing detected points and analysis  
+- Objective, repeatable measurement results
 
-Visualization of detected points and grouping metrics
+## Methodology
 
-Technologies Used
+1. **Image Preprocessing**  
+   - Grayscale conversion  
+   - Noise reduction (Gaussian blur / median filter)  
+   - Contrast enhancement if needed  
 
-Python
+2. **Shot Detection**  
+   - Adaptive thresholding / binary segmentation  
+   - Contour detection  
+   - Shape & size filtering to isolate bullet holes  
 
-OpenCV
+3. **Feature Extraction**  
+   - Compute centroid (x,y) of each valid contour  
+   - Optional: diameter / area validation  
 
-NumPy
+4. **Grouping & Spatial Analysis**  
+   - Spatial clustering (DBSCAN / hierarchical / k-means with silhouette)  
+   - Calculate group center, radius, extreme spread, mean radial deviation  
+   - Compute standard metrics (group size in MOA, inches, cm, etc.)
 
-SciPy
+5. **Visualization & Reporting**  
+   - Overlay detected points and clusters on original image  
+   - Display key statistics (group count, size, center, dispersion)  
+   - Save annotated result images
 
-Matplotlib
+## Technologies Used
 
-Results
+- **Python**  
+- **OpenCV** – core computer vision library  
+- **NumPy** – numerical operations & array handling  
+- **SciPy** – spatial algorithms & clustering  
+- **Matplotlib** – visualization & result plotting
 
-Accurate detection of shot impact points from target images
+## Results
 
-Computation of grouping precision based on spatial distribution
+- Reliable detection of shot impact points across various lighting conditions and target types  
+- Objective grouping precision scores  
+- Clear visual feedback suitable for instructors and shooters  
+- Significant time saving compared to manual measurement
 
-Visual overlays for interpretation and reporting
+## Applications
 
-Applications
+- Military & defense shooting practice analysis  
+- Precision rifle training evaluation  
+- Law enforcement firearms qualification scoring  
+- Competitive shooting performance tracking  
+- General image-based geometric measurement systems  
+- Computer vision PoC / research projects
 
-Military and defense shooting practice analysis
+## Future Improvements
 
-Precision training evaluation
+- Machine learning / deep learning based shot detection (more robust to lighting, dirt, torn paper)  
+- Synthetic bullet hole data generation for training & evaluation  
+- Real-time analysis from live camera feed  
+- Multi-session statistical comparison & progress tracking  
+- Mobile/web interface for field usage  
+- Automatic target type recognition (bullseye, silhouette, etc.)
 
-Image-based measurement systems
+## Important Notes
 
-Computer vision research and PoC development
-
-Future Improvements
-
-ML-based clustering for improved robustness
-
-Synthetic data generation for training and evaluation
-
-Real-time camera integration
-
-Statistical analysis across multiple sessions
-
-Disclaimer
-
-This project does not contain any classified or sensitive information. All data used are anonymized and intended solely for research and demonstration purposes.
+- This project contains **no classified or sensitive information**
